@@ -12,15 +12,16 @@ public class Exercicio4ED {
         Scanner sc = new Scanner(System.in);
         int num1, num2, num3, aux;
 
-        System.out.println("Digite o 1° número ");
+        //Condicionais simples
+        System.out.print("Digite o 1° número: ");
         num1 = sc.nextInt();
 
-        System.out.println("Digite o 2° número ");
+        System.out.print("Digite o 2° número: ");
         num2 = sc.nextInt();
 
-        System.out.println("Digite o 3° número ");
+        System.out.print("Digite o 3° número: ");
         num3 = sc.nextInt();
-        
+
         if (num2 > num3) {
             aux = num3;
             num3 = num2;
@@ -36,7 +37,54 @@ public class Exercicio4ED {
             num2 = num1;
             num1 = aux;
         }
-        System.out.println(num1 + " " + num2 + " " + num3);
-    }
+        System.out.println("Números em ordem crescente: " + num1 + ", " + num2 + ", " + num3);
 
+        System.out.println("");
+        System.out.println("Faça outra vez");
+        System.out.println("");
+        
+        //Condicionais aninhadas
+        System.out.print("Digite o primeiro número: ");
+        num1 = sc.nextInt();
+
+        System.out.print("Digite o segundo número: ");
+        num2 = sc.nextInt();
+
+        System.out.print("Digite o terceiro número: ");
+        num3 = sc.nextInt();
+
+        int menor, meio, maior;
+
+        if (num1 <= num2 && num1 <= num3) {
+            menor = num1;
+            if (num2 <= num3) {
+                meio = num2;
+                maior = num3;
+            } else {
+                meio = num3;
+                maior = num2;
+            }
+        } else if (num2 <= num1 && num2 <= num3) {
+            menor = num2;
+            if (num1 <= num3) {
+                meio = num1;
+                maior = num3;
+            } else {
+                meio = num3;
+                maior = num1;
+            }
+        } else {
+            menor = num3;
+            if (num1 <= num2) {
+                meio = num1;
+                maior = num2;
+            } else {
+                meio = num2;
+                maior = num1;
+            }
+        }
+
+        System.out.println("Números em ordem crescente: " + menor + ", " + meio + ", " + maior);
+
+    }
 }
